@@ -13,7 +13,6 @@ var questions = {
 // need to keep score
 // need to keep the time
 
-
 function startTimer(){
 
 }
@@ -52,3 +51,4 @@ function startQuiz(){
 
 // eventListener here // when i click the start button
 
+addQuestion()
