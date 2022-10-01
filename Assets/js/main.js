@@ -3,6 +3,12 @@
 // there may be more steps and corrections to be made in future
 console.log("Sam, your questions");
 // need a collection of objects that hold the questions
+var questions = {
+  question_1: "what is a Object?",
+  question_2: "what is a CSS?",
+  questions_3: "what is JAVAscript?",
+  questions_4: "what is html?"
+}
 // need to keep a count of the question that is displayed
 // need to keep score
 // need to keep the time
