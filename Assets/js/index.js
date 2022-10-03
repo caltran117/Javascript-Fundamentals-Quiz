@@ -1,9 +1,10 @@
-// function startQuiz (){
-//     console.log("startquiz")
-// }
+
+// selected html elements and can refer back to them with variables
+const quizSection = document.getElementById('quiz')
+const resultsSection = document.getElementById('results')
+const submitbutton = document.getElementById('button')
 
     // function used to organize click or button related element
-
 function clicks (){
     //  start button
   var startquizbutton = document.querySelector("#button");
