@@ -4,7 +4,13 @@ const quizSection = document.getElementById('quiz')
 const resultsSection = document.getElementById('results')
 const submitbutton = document.getElementById('button')
 
+// generateQuiz(quizSection,resultsSection,submitbutton,QuestionsAnswers)
+
     // function used to organize click or button related element
+
+function buildQuiz(){
+
+
 function clicks (){
     //  start button
   var startquizbutton = document.querySelector("#button");
@@ -19,8 +25,11 @@ function clicks (){
   // end of 5 questions highscore after submit chart will appear
     });
 }
-// calls on the function clicks, the key to the matrix portal
 clicks ();
+}
+buildQuiz();
+// calls on the function clicks, the key to the matrix portal
+
 
 // storing questions & answers
 // 5 questions that will appear with answers
@@ -81,6 +90,27 @@ Answers:
 }
 ]}
 
+// questions pop up
+function questionsAppear(Questions, quizSection)
+
+var output = [];
+var answer;
+
+for(var i=0; i<Questions.length; i++){
+
+  answer =[];
+
+  for(number in questions[i].answers){
+
+    answer.push(
+      
+    )
+  }
+
+}
+
+// will call the function to activate codes within that portal
+QuestionsAnswers ();
 // storing scores 
 // highscore chart ranks scores for high to low
 // scores of each question is kept tracked of
