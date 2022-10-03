@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Javascript Quiz</title>
   <link href="style.css" rel="stylesheet">
+  <!-- custom icons -->
   <script src="https://kit.fontawesome.com/4a9c0bac0f.js" crossorigin="anonymous"></script>
+  <!-- defer auto defers it below the body -->
   <script defer src="assets/js/index.js"></script>
 </head>
 
@@ -19,9 +21,12 @@
 <body>
   <!-- quiz box -->
   <div class="container">
+    <!-- flex allows the container to change automatically -->
     <div id="home" class="flex-center flex-column">
       <h1> Are you ready? </h1>
+      <!-- play button is linked -->
       <a href="/game.html" class="btn">Play</a>
+      <!-- high score linked, i creates an alternative text to add the custom icon -->
       <a href="/highscores.html" id="highscores-btn" class="btn">highscores<i class="fas fa-crown"></i></a>
     </div>
   </div>
