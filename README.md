@@ -35,7 +35,9 @@ Matthew Seiler
 <br>
 Website sources:<br>
 https://www.sitepoint.com/simple-javascript-quiz/<br>
-https://simplestepscode.com/javascript-quiz-tutorial/
+https://simplestepscode.com/javascript-quiz-tutorial/<br>
+video sources<br>
+https://www.youtube.com/watch?v=f4fB9Xg2JEY
 
 ## License
 
