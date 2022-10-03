@@ -1,0 +1,45 @@
+body {
+    color: #ffffff;
+}
+
+.choice-container {
+    display:flex;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    font-size: 3rem;
+    color:rgb(0, 0, 0);
+    min-width: 80rem;
+}
+
+.choice-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0rem .5rem 0 rgb(255, 255, 255);
+    transform: scale(1.01);
+    transform: transform 100ms;
+}
+
+.choice-prefix {
+    padding: 2rem 2rem;
+}
+
+.choice-text {
+    padding: 2rem;
+    width: 100%;
+}
+
+.correct{
+    background:linear-gradient(32deg,rgba(green) 0%, (rgb green)100%);
+}
+
+.incorrect{
+    background:linear-gradient(32deg,rgba(green) 0%, (rgb green)100%);
+}
+
+@media screen and (max-width: 768px) {
+    .choice-container {
+        min-width: 40rem;
+    }
+    
+}

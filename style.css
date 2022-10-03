@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Dawning+of+a+New+Day&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
 
@@ -14,7 +12,8 @@
     padding: 0;
     /* use this value so when you set 1 rem it = 10px or 1.6 = 16px */
     font-size: 62.5%;
-    font-family: 'Dawning of a New Day', cursive;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 h1 {
