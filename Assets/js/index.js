@@ -13,7 +13,7 @@ function buildQuiz(){
 
 function clicks (){
     //  start button
-  var startquizbutton = document.querySelector("#button");
+  var startquizbutton = document.querySelector("#startbutton");
   startquizbutton.addEventListener("click", function(hidebutton) {
     console.log("test")
     // button disapears, 
@@ -103,7 +103,7 @@ for(var i=0; i<Questions.length; i++){
   for(number in questions[i].answers){
 
     answer.push(
-      
+
     )
   }
 
