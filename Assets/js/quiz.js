@@ -1,5 +1,5 @@
 const question = document.querySelector('#question');
-const choices = Array.from(document.querySelector('.choicetext'));
+const choices = Array.from(document.querySelector('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
@@ -12,26 +12,24 @@ let questionsCounter = 0
 let availableQuestions = []
 
 let questions = [
-    { question1: "Commonly used data types Do not include:",
-Answers: 
-{
-  1: 'strings',
-  2: 'boolens',
-  3: 'alerts',
-  4: 'numbers',
-}, 
-  correctAnswer: '3'
-},
-{ question2: "The condition in a if/else statement is enclosed with________.",
-Answers: 
-{
-  1: 'quotes',
-  2: 'curly brackets',
-  3: 'parenthesis',
-  4: 'square brackets',
-},
-  correctAnswer: '2'
-},
+    { 
+    question1: 'Commonly used data types Do not include:',
+    1: 'strings',
+    2: 'boolens',
+    3: 'alerts',
+    4: 'numbers',
+    answer: 3,
+    }, 
+
+    {  
+    question2: 'The condition in a if/else statement is enclosed with________.',
+    1: 'quotes',
+    2: 'curly brackets',
+    3: 'parenthesis',
+    4: 'square brackets',
+    answer: 2,
+    },
+    
 { question3: "arrays in Javascript can be used to store ________.",
 Answers: 
 {
@@ -59,9 +57,9 @@ Answers:
   2: 'terminal/bash',
   3: 'for loops',
   4: 'console.log',
+  answer: 4,
 },
-  correctAnswer: '4'
-
+  
 }
 
 ]
@@ -69,4 +67,59 @@ Answers:
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 5
 
-startGame = ()
+startGame = () => {
+    questionCounter = 0
+    score = 0
+    availableQuestions = [...questions]
+    getNewQuestions()
+}
+
+getNewQuestions = () => {
+    if(availableQuestions.length === 0 || questionsCounter > MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign('/end.html')
+    }
+
+    questionsCounter++
+    progressText.innertext = `Questions ${questionsCounter} of ${MAX_QUESTIONS}`
+    progressBarFull.style.width = `${(questionCounter/MAXQUESTIONS) *100}%`
+
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)  
+    currentQuestion = availableQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
+
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number']
+        choice.innerText = currentQuestion['choice' + number]
+    })
+
+    availableQuestions.splice(questionsIndex, 1)
+
+    acceptingAnswer = true
+}
+
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if(!acceptingAnswers) return
+
+        acceptingAnswer = falseconst 
+        selectedChoice = e.target
+        const selectedChoice = selectedChoice.dataset['number']
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+        if(classToapply === 'correct') {
+            incrementScore(SCORE_POINTS)
+        }
+
+        selectedChoice.parentElement.classlist.add(classtoApply)
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classlist.remove(classToApply) 
+            getNewQuestion()
+
+        }, 1000)
+    })
+})
