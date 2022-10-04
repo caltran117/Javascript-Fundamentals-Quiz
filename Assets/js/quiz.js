@@ -4,8 +4,7 @@ const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 
-let currentQuestions = {}
-
+let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
 let questionsCounter = 0
@@ -20,7 +19,6 @@ let questions = [
     4: 'numbers',
     answer: 3,
     }, 
-
     {  
     question2: 'The condition in a if/else statement is enclosed with________.',
     1: 'quotes',
@@ -29,7 +27,6 @@ let questions = [
     4: 'square brackets',
     answer: 2,
     },
-    
     { 
     question3: "arrays in Javascript can be used to store ________.",
     1: 'numbers & strings',
@@ -38,7 +35,6 @@ let questions = [
     4: 'all of the above',
     answer: '1'
     },
-
     { 
     question4: "string values must be enclosed within_______when being assigned to variables.", 
     1: 'commas',
@@ -47,7 +43,6 @@ let questions = [
     4: 'parenthesis',
     answer: '4'
     },
-
     { 
       question5: "a very useful tool during development and debugging is:",
       1: 'Javascript',
@@ -63,7 +58,7 @@ const SCORE_POINTS = 100
 const MAX_QUESTIONS = 5
 
 startGame = () => {
-    questionCounter = 0
+    questionsCounter = 0
     score = 0
     availableQuestions = [...questions]
     getNewQuestions()
@@ -78,7 +73,7 @@ getNewQuestions = () => {
 
     questionsCounter++
     progressText.innertext = `Questions ${questionsCounter} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionCounter/MAXQUESTIONS) *100}%`
+    progressBarFull.style.width = `${(questionsCounter/MAX_QUESTIONS) * 100}%`
 
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)  
     currentQuestion = availableQuestions[questionsIndex]
@@ -92,24 +87,24 @@ getNewQuestions = () => {
 
     availableQuestions.splice(questionsIndex, 1)
 
-    acceptingAnswer = true
+    acceptingAnswers = true
 }
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!acceptingAnswers) return
 
-        acceptingAnswer = falseconst 
-        selectedChoice = e.target
-        const selectedChoice = selectedChoice.dataset['number']
+        acceptingAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset['number']
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
-        if(classToapply === 'correct') {
+        if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
         }
 
-        selectedChoice.parentElement.classlist.add(classtoApply)
+        selectedChoice.parentElement.classlist.add(classToApply)
 
         setTimeout(() => {
             selectedChoice.parentElement.classlist.remove(classToApply) 
