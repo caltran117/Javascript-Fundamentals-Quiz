@@ -30,37 +30,32 @@ let questions = [
     answer: 2,
     },
     
-{ question3: "arrays in Javascript can be used to store ________.",
-Answers: 
-{
-  1: 'numbers & strings',
-  2: 'other arrays',
-  3: 'booleans',
-  4: 'all of the above',
-},
-  correctAnswer: '1'
-},
-{ question4: "string values must be enclosed within_______when being assigned to variables.",
-Answers: 
-{
-  1: 'commas',
-  2: 'curly brackets',
-  3: 'quotes',
-  4: 'parenthesis',
-},
-  correctAnswer: '4'
-},
-{ question5: "a very useful tool during development and debugging is:",
-Answers:
-{
-  1: 'Javascript',
-  2: 'terminal/bash',
-  3: 'for loops',
-  4: 'console.log',
-  answer: 4,
-},
-  
-}
+    { 
+    question3: "arrays in Javascript can be used to store ________.",
+    1: 'numbers & strings',
+    2: 'other arrays',
+    3: 'booleans',
+    4: 'all of the above',
+    answer: '1'
+    },
+
+    { 
+    question4: "string values must be enclosed within_______when being assigned to variables.", 
+    1: 'commas',
+    2: 'curly brackets',
+    3: 'quotes',
+    4: 'parenthesis',
+    answer: '4'
+    },
+
+    { 
+      question5: "a very useful tool during development and debugging is:",
+      1: 'Javascript',
+      2: 'terminal/bash',
+      3: 'for loops',
+      4: 'console.log',
+      answer: 4,
+    },
 
 ]
 
