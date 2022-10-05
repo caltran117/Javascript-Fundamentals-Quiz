@@ -30,13 +30,14 @@ body {
 }
 
 .correct {
-    background:linear-gradient(32deg,rgba(green) 0%, (rgb green)100%);
+    background: linear-gradient(32deg, rgba(green) 0%, (rgb green)100%);
 }
 
 .incorrect {
-    background:linear-gradient(32deg,rgba(red) 0%, (rgb red)100%);
+    background: linear-gradient(32deg, rgba(red) 0%, (rgb red)100%);
 }
 
+/* headup display */
 #hud {
     display: flex;
     justify-content: space-between;
@@ -54,7 +55,7 @@ body {
 #progressBar {
     width: 20rem;
     height: 3rem;
-    border: 0.2rem solid rgb(green);
+    border: 0.2rem solid rgb(red);
     margin-top: 2rem;
     border-radius: 50px;
     overflow: hidden;

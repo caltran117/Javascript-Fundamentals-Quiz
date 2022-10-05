@@ -1,6 +1,6 @@
 // unchanging variable const which selects for the given html id/class
 const question = document.querySelector('#question');
-const choices = Array.from(document.querySelector('.choice-text'));
+const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
@@ -100,6 +100,7 @@ getNewQuestions = () => {
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!acceptingAnswers) return
+        
         acceptingAnswers = false
         const selectedChoice = e.target
         const selectedAnswer = selectedChoice.dataset['number']
