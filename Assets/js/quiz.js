@@ -1,62 +1,67 @@
+// unchanging variable const which selects for the given html id/class
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelector('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 
+// creation of block scoped let instead of var function scoped
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
 let questionsCounter = 0
 let availableQuestions = []
 
+// input of questions to equal questions
 let questions = [
     { 
-    question1: 'Commonly used data types Do not include:',
-    1: 'strings',
-    2: 'boolens',
-    3: 'alerts',
-    4: 'numbers',
+    question: "Commonly used data types Do not include:",
+    choice1: "strings",
+    choice2: "boolens",
+    choice3: "alerts",
+    choice4: "numbers",
     answer: 3,
     }, 
     {  
-    question2: 'The condition in a if/else statement is enclosed with________.',
-    1: 'quotes',
-    2: 'curly brackets',
-    3: 'parenthesis',
-    4: 'square brackets',
+    question: 'The condition in a if/else statement is enclosed with________.',
+    choice1: 'quotes',
+    choice2: 'curly brackets',
+    choice3: 'parenthesis',
+    choice4: 'square brackets',
     answer: 2,
     },
     { 
-    question3: "arrays in Javascript can be used to store ________.",
-    1: 'numbers & strings',
-    2: 'other arrays',
-    3: 'booleans',
-    4: 'all of the above',
+    question: "arrays in Javascript can be used to store ________.",
+    choice1: 'numbers & strings',
+    choice2: 'other arrays',
+    choice3: 'booleans',
+    choice4: 'all of the above',
     answer: '1'
     },
     { 
-    question4: "string values must be enclosed within_______when being assigned to variables.", 
-    1: 'commas',
-    2: 'curly brackets',
-    3: 'quotes',
-    4: 'parenthesis',
+    question: "string values must be enclosed within_______when being assigned to variables.", 
+    choice1: 'commas',
+    choice2: 'curly brackets',
+    choice3: 'quotes',
+    choice4: 'parenthesis',
     answer: '4'
     },
     { 
-      question5: "a very useful tool during development and debugging is:",
-      1: 'Javascript',
-      2: 'terminal/bash',
-      3: 'for loops',
-      4: 'console.log',
-      answer: 4,
+    question: "a very useful tool during development and debugging is:",
+    choice1: 'Javascript',
+    choice2: 'terminal/bash',
+    choice3: 'for loops',
+    choice4: 'console.log',
+    answer: 4,
     },
 
 ]
 
+// constant for points and max questions, will not change
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 5
 
+// other way to add a function, elements for starting the game
 startGame = () => {
     questionsCounter = 0
     score = 0
@@ -64,7 +69,9 @@ startGame = () => {
     getNewQuestions()
 }
 
+// function to get knew questions
 getNewQuestions = () => {
+
     if(availableQuestions.length === 0 || questionsCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
@@ -93,7 +100,6 @@ getNewQuestions = () => {
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!acceptingAnswers) return
-
         acceptingAnswers = false
         const selectedChoice = e.target
         const selectedAnswer = selectedChoice.dataset['number']
@@ -113,3 +119,11 @@ choices.forEach(choice => {
         }, 1000)
     })
 })
+
+
+incrementScore = num => {
+    score +=num
+    scoreText.innertext = score
+}
+
+startGame()
